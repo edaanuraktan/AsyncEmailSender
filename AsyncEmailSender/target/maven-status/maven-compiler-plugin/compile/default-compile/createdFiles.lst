@@ -1,0 +1,5 @@
+com\mycompany\asyncemailsender\EmailWorker.class
+com\mycompany\asyncemailsender\EmailSender$1.class
+com\mycompany\asyncemailsender\AsyncEmailSender.class
+com\mycompany\asyncemailsender\EmailSender.class
+com\mycompany\asyncemailsender\DatabaseConnector.class
