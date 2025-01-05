@@ -1,10 +1,10 @@
 # AsyncEmailSender
 
-# Proje Açıklaması
+## Proje Açıklaması
 
 Bu proje, rastgele seçilen alıcılara (e-postalara), rastgele konu ve içerik ile e-postalar göndermek için geliştirilmiş bir Java uygulamasıdır. Uygulama, MongoDB kullanarak email veritabanındaki "emailCollection" ve "subjectContentCollection" koleksiyonlarını kullanır.
 
-# Genel İşleyiş
+## Genel İşleyiş
 
 * emailCollection koleksiyonundan rastgele 10 e-posta adresi seçilir.
 
@@ -14,7 +14,7 @@ Bu proje, rastgele seçilen alıcılara (e-postalara), rastgele konu ve içerik 
 
 * Projede çoklu iş parçacığı (multithreading) kullanılarak e-postalar eşzamanlı olarak gönderilir.
 
-# Teknolojiler
+## Teknolojiler
 
 **Programlama Dili:** Java
 
@@ -26,7 +26,7 @@ Bu proje, rastgele seçilen alıcılara (e-postalara), rastgele konu ve içerik 
 
 **Çevresel Değişken Yönetimi:** Dotenv
 
-# Kullanım
+## Kullanım
 
 **1. Gereksinimler**
 
@@ -69,13 +69,13 @@ subjectContentCollection Şeması
 EMAIL_USERNAME=ornek@gmail.com
 EMAIL_PASSWORD=ornek_sifre
 
-Not: Güvenlik sebeplerinden dolayı .env dosyası GitHub'a yüklenmeyecektir. E-posta hesabınızın kullanıcı adı ve şifresi burada saklanır. Bu dosya olmadan proje çalışmaz.
+**Not:** Güvenlik sebeplerinden dolayı .env dosyası GitHub'a yüklenmeyecektir. E-posta hesabınızın kullanıcı adı ve şifresi burada saklanır. Bu dosya olmadan proje çalışmaz.
 
 * Uygulamayı çalıştırın:
 
 mvn exec:java
 
-# Proje Dosya Yapısı
+## Proje Dosya Yapısı
 
 **AsyncEmailSender.java:** Uygulamanın ana dosyası. E-posta işleme işlevini başlatır.
 
