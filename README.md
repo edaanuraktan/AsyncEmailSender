@@ -4,16 +4,6 @@
 
 Bu proje, rastgele seçilen alıcılara (e-postalara), rastgele konu ve içerik ile e-postalar göndermek için geliştirilmiş bir Java uygulamasıdır. Uygulama, MongoDB kullanarak email veritabanındaki "emailCollection" ve "subjectContentCollection" koleksiyonlarını kullanır.
 
-## Genel İşleyiş
-
-* emailCollection koleksiyonundan rastgele 10 e-posta adresi seçilir.
-
-* subjectContentCollection koleksiyonundan rastgele bir konu ve içerik seçilir.
-
-* Her bir e-posta adresine rastgele seçilen konu ve içerik ile e-posta gönderilir.
-
-* Projede çoklu iş parçacığı (multithreading) kullanılarak e-postalar eşzamanlı olarak gönderilir.
-
 ## Teknolojiler
 
 **Programlama Dili:** Java
@@ -75,16 +65,71 @@ EMAIL_PASSWORD=ornek_sifre
 
 mvn exec:java
 
-## Proje Dosya Yapısı
+<hr>
 
-**AsyncEmailSender.java:** Uygulamanın ana dosyası. E-posta işleme işlevini başlatır.
+# AsyncEmailSender
 
-**DatabaseConnector.java:** MongoDB ile bağlantı sağlar.
+## Project Description
 
-**EmailSender.java:** E-posta gönderim işlemlerini yürütür.
+This project is a Java application for sending emails to randomly selected recipients (emails) with random subject and content. The application uses “emailCollection” and “subjectContentCollection” collections from the email database using MongoDB.
 
-**EmailWorker.java:** Veritabanından rastgele e-posta adresi ve içerik seçer ve e-posta gönderimini eşzamanlı olarak gerçekleştirir.
+## Technologies
 
-**.env:** E-posta kullanıcı adı ve şifresi gibi hassas bilgileri saklar. 
+**Programming Language:** Java
 
+**Email Sending:** Jakarta Mail API
 
+**Database:** MongoDB
+
+**Addiction Management:** Maven
+
+**Environmental Variable Management:** Dotenv
+
+## Usage
+
+**1. Requirements**
+
+* Java 8 or above
+
+* MongoDB
+
+* An email account with SMTP support (e.g. Gmail)
+
+**2. Installation**
+
+* Clone the project:
+
+git clone <repository-link>
+cd async-email-sender
+
+* Use Maven to install the required dependencies:
+
+mvn clean install
+
+* Make sure that MongoDB is working correctly. Create your collections according to the following schema:
+
+emailCollection Schema
+
+{
+  “_id": “ObjectId”,
+  “email": “String”
+}
+
+subjectContentCollection Schema
+
+{
+  “_id": “ObjectId”,
+  “subject": “String”,
+  “content": “String”
+}
+
+* Define email credentials in an .env file:
+
+EMAIL_USERNAME=ornek@gmail.com
+EMAIL_PASSWORD=example_password
+
+**Note:** For security reasons the .env file will not be uploaded to GitHub. The username and password for your email account are stored here. The project will not run without this file.
+
+* Run the application:
+
+mvn exec:java
